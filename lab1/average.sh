@@ -7,4 +7,4 @@ count=$((count + 1))
 sum=$((sum+var))
 done
 echo $count
-echo "scale=2; $sum / $count" | bc -l111
+echo "scale=2; $sum / $count" | bc
