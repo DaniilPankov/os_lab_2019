@@ -11,7 +11,7 @@ parallel_min_max : utils.o find_min_max.o utils.h find_min_max.h
 	$(CC) -o parallel_min_max utils.o find_min_max.o parallel_min_max.c $(CFLAGS)
 
 run_sequential: run_sequential.c
-	$(CC) -o run_sequential run_sequential.c
+	$(CC) -o run_sequential run_sequential.c $(CFLAGS)
 
 utils.o : utils.h
 	$(CC) -o utils.o -c utils.c $(CFLAGS)
