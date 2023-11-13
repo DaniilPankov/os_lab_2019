@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-I.
 
-all : parallel_min_max process_memory
+all : parallel_min_max process_memory parallel_sum zombi
 
 parallel_min_max : utils.o find_min_max.o utils.h find_min_max.h
 	$(CC) -o parallel_min_max utils.o find_min_max.o parallel_min_max.c $(CFLAGS)
@@ -21,8 +21,10 @@ parallel_sum : lib_sum utils.o utils.h
 lib_sum : ./SUM/sum.c
 	gcc -o ./SUM/sum.o -c ./SUM/sum.c -I./SUM
 	ar rcs ./libsum.a ./SUM/sum.o
+zombi : 
+	$(CC) zombi.c -o zombi
 
 clean :
-	rm utils.o find_min_max.o parallel_min_max process_memory
+	rm utils.o find_min_max.o parallel_min_max process_memory ./SUM/sum.o libsum.a parallel_sum zombi 
 
 
