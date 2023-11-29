@@ -13,7 +13,7 @@ common/libcommon.a: common/common.o
 	ar rcs common/libcommon.a common/common.o
 	ranlib common/libcommon.a
 
-common/common.o: common/common.o common/common.h
+common.common.o: common/common.o common/common.h
 	$(CC) $(CFLAGS) -c -o common/common.o common/common.c
 
 clean:
