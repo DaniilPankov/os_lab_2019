@@ -11,12 +11,12 @@
 #include <sys/types.h>
 #include <pthread.h>
 #include <arpa/inet.h>
-
+//Информация о сервере
 struct Server {
     char ip[255];
     int port;
 };
-
+// Структура для передачи данных 
 struct ThreadData {
     struct Server server;
     uint64_t begin;
@@ -37,7 +37,7 @@ uint64_t MultModulo(uint64_t a, uint64_t b, uint64_t mod) {
 
     return result % mod;
 }
-
+// Функция для преобразования строки в целое число
 bool ConvertStringToUI64(const char *str, uint64_t *val) {
     char *end = NULL;
     unsigned long long i = strtoull(str, &end, 10);
@@ -104,7 +104,7 @@ void *handle_server(void *arg) {
 
     pthread_exit(NULL);
 }
-
+//Обработка аргументов командной строки
 int main(int argc, char **argv) {
     uint64_t k = -1;
     uint64_t mod = -1;

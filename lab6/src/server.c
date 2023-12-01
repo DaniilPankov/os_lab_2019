@@ -9,7 +9,7 @@
 #include <sys/socket.h>
 #include <pthread.h>
 #include "common/common.h"
-
+// Функция для вычисления факториала
 uint64_t Factorial(const struct FactorialArgs *args) {
     uint64_t ans = 1;
 
@@ -19,7 +19,7 @@ uint64_t Factorial(const struct FactorialArgs *args) {
 
     return ans;
 }
-
+//Функция для вычисления факториала в отдельном потоке
 void *ThreadFactorial(void *args_ptr) {
     struct FactorialArgs *args = (struct FactorialArgs *)args_ptr;
     uint64_t result = Factorial(args);
